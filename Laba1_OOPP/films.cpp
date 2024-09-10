@@ -42,3 +42,29 @@ ostream& operator << (ostream& out, const films& fl)
 		<< "Фильм в прокате? (1 - Да, 0 - Нет): " << fl.is_available << endl;
 	return out;
 }
+ifstream& operator >> (ifstream& fin, films& movie)
+{
+	getline(fin, movie.title);
+	fin >> movie.year;
+	fin.ignore();
+	getline(fin, movie.genre);
+	fin >> movie.rating;
+	fin.ignore();
+	getline(fin, movie.country);
+	getline(fin, movie.director);
+	fin >> movie.is_available;
+	fin.ignore();
+	cout << movie.title << " успешно скачан из файла!" << endl;
+	return fin;
+}
+ofstream& operator << (ofstream& fout, const films& movie)
+{
+	fout << movie.title << endl
+		<< movie.year << endl
+		<< movie.genre << endl
+		<< movie.rating << endl
+		<< movie.country << endl
+		<< movie.director << endl
+		<< movie.is_available << endl;
+	return fout;
+}

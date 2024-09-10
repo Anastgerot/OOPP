@@ -44,7 +44,6 @@ void filmoteka::Clear_Films()
     movies.clear();
     cout << "Все фильмы удалены." << endl;
 }
-
 void filmoteka::Save_movies()
 {
     if (movies.empty())
@@ -65,23 +64,16 @@ void filmoteka::Save_movies()
         fout << movies.size() << endl;
         for (const auto& movie : movies)
         {
-            fout << (*movie).title << endl
-                << (*movie).year << endl
-                << (*movie).genre << endl
-                << (*movie).rating << endl
-                << (*movie).country << endl
-                << (*movie).director << endl
-                << (*movie).is_available << endl;
+            fout << *movie << endl;
         }
-        fout.close();
         cout << "Фильмы успешно сохранены в файл " << filename << ".txt" << endl;
     }
     else
     {
         cout << "Не найден файл с таким именем. " << filename << " Невозможно сохранить данные." << endl;
     }
+    fout.close();
 }
-
 void filmoteka::Load_movies()
 {
     int count_movies = 0;
@@ -120,19 +112,8 @@ void filmoteka::Load_movies()
                 for (int i = 0; i < count_movies; i++)
                 {
                     films* movie = new films();
-                    getline(fin, (*movie).title);
-                    fin >> (*movie).year;
-                    fin.ignore();
-                    getline(fin, (*movie).genre);
-                    fin >> (*movie).rating;
-                    fin.ignore();
-                    getline(fin, (*movie).country);
-                    getline(fin, (*movie).director);
-                    fin >> (*movie).is_available;
-                    fin.ignore();
-
                     movies.push_back(movie);
-                    cout << (*movie).title << " успешно скачан!" << endl;
+                    fin >> *movie;
                 }
             }
 
