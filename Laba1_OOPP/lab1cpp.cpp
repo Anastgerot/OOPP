@@ -2,14 +2,13 @@
 #include <vector>
 #include "films.h"
 #include "Utils.h"
-#include "addition.h"
+#include "filmoteka.h"
 
 using namespace std;
 int main()
 {
-	addition add;
-	add.start();
-	vector<films*> movies;
+	filmoteka film;
+	film.start();
 	while (true) 
 	{
 		int choice;
@@ -25,19 +24,19 @@ int main()
 		switch (choice)
 		{
 		case 1:
-			add.AddFilm(movies);
+			film.AddFilm();
 			break;
 		case 2:
-			add.View_all(movies);
+			film.View_all();
 			break;
 		case 3:
-			add.Clear_Films(movies);
+			film.Clear_Films();
 			break;
 		case 4:
-			add.Save_movies(movies);
+			film.Save_movies();
 			break;
 		case 5:
-			add.Load_movies(movies);
+			film.Load_movies();
 			break;
 		case 0:
 			return 0;

@@ -127,12 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="addition.cpp" />
+    <ClCompile Include="filmoteka.cpp" />
     <ClCompile Include="films.cpp" />
     <ClCompile Include="lab1cpp.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="addition.h" />
+    <ClInclude Include="filmoteka.h" />
     <ClInclude Include="films.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>

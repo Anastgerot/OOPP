@@ -21,7 +21,7 @@
     <ClCompile Include="films.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="addition.cpp">
+    <ClCompile Include="filmoteka.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -32,7 +32,7 @@
     <ClInclude Include="Utils.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="addition.h">
+    <ClInclude Include="filmoteka.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
