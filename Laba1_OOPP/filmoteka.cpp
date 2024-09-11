@@ -89,10 +89,7 @@ void filmoteka::Load_movies()
     }
     else
     {
-        for (auto& movie : movies) {
-            delete movie;
-        }
-        movies.clear();
+        Clear_Films();
 
         fin >> count_movies;
         fin.ignore();
